@@ -24,7 +24,7 @@ mongoose.connection.once('open', ()=>{
 
 //middleware 
 app.use(express.json())
-const whitelist = ['http://localhost:3000', 'https://bridge-app-react.herokuapp.com/]
+const whitelist = ['http://localhost:3000', 'https://bridge-app-react.herokuapp.com/']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
