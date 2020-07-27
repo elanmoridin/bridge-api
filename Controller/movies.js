@@ -24,4 +24,11 @@ movie.post('/add', async (req, res) => {
   })
 })
 
+movie.delete('/delete', (req, res) => {
+  Movies.findOne({title: req.body.title}, (err, foundMovie) => {
+    console.log(foundMovie)
+    Movies.findByIdAndDelete(foundMovie.id, (err, data) => {
+  })
+  })
+})
 module.exports = movie
