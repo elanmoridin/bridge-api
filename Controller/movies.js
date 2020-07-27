@@ -31,7 +31,7 @@ movie.delete('/delete', (req, res) => {
       if (err) {
         res.status(400).json({ error: err.message })
       }
-      res.status(200).json(foundMovies)
+      res.status(200).json(data)
   })
   })
 })
