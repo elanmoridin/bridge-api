@@ -28,6 +28,10 @@ movie.delete('/delete', (req, res) => {
   Movies.findOne({title: req.body.title}, (err, foundMovie) => {
     console.log(foundMovie)
     Movies.findByIdAndDelete(foundMovie.id, (err, data) => {
+      if (err) {
+        res.status(400).json({ error: err.message })
+      }
+      res.status(200).json(foundMovies)
   })
   })
 })
