@@ -48,9 +48,9 @@ app.use('/users', userController)
 
 //NBA Controller
 let hoops = require('./Controller/basketball.js');
-app.get('/', (req, res) => {
-  res.status(200).json('Basketball api updates')
-});
+// app.get('/', (req, res) => {
+//   res.status(200).json('Basketball api updates')
+// });
 app.use('/api/v1', hoops);
 
 //Movies CONTROLLER
