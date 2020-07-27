@@ -37,33 +37,33 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-// //Bridge CONTROLLER
-// let bridgeController=require('./Controller/bridge.js')
-// app.use('/bridge', bridgeController)
+//Bridge CONTROLLER
+let bridgeController=require('./Controller/bridge.js')
+app.use('/bridge', bridgeController)
 
 //User CONTROLLER
 let userController=require('./Controller/users_controller.js')
 app.use('/users', userController)
 
-// //NBA Controller
-// app.use(bodyParser.json());
-// let hoops = require('./controller/basketball');
-// app.get('/', (req, res) => {
-//   res.status(200).json('Basketball api updates')
-// });
-// app.use('/api/v1', hoops);
+//NBA Controller
+app.use(bodyParser.json());
+let hoops = require('./controller/basketball');
+app.get('/', (req, res) => {
+  res.status(200).json('Basketball api updates')
+});
+app.use('/api/v1', hoops);
 
-// //Movies CONTROLLER
-// let moviesController=require('./Controller/movies.js')
-// app.use('/movies', moviesController)
+//Movies CONTROLLER
+let moviesController=require('./Controller/movies.js')
+app.use('/movies', moviesController)
 
-// //Books CONTROLLER
-// let booksController=require('./Controller/books.js')
-// app.use('/books', booksController)
+//Books CONTROLLER
+let booksController=require('./Controller/books.js')
+app.use('/books', booksController)
 
-// //Music CONTROLLER
-// let musicController=require('./Controller/music.js')
-// app.use('/music', musicController)
+//Music CONTROLLER
+let musicController=require('./Controller/music.js')
+app.use('/music', musicController)
 
 
 
