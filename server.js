@@ -24,6 +24,7 @@ mongoose.connection.once('open', ()=>{
 
 //middleware 
 app.use(express.json())
+app.use(bodyParser.json())
 const whitelist = ['http://localhost:3000', 'https://bridge-app-react.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
@@ -45,13 +46,12 @@ app.use('/bridge', bridgeController)
 let userController=require('./Controller/users_controller.js')
 app.use('/users', userController)
 
-// //NBA Controller
-// app.use(bodyParser.json());
-// let hoops = require('./controller/basketball');
-// app.get('/', (req, res) => {
-//   res.status(200).json('Basketball api updates')
-// });
-// app.use('/api/v1', hoops);
+//NBA Controller
+let hoops = require('./Controller/basketball.js');
+app.get('/', (req, res) => {
+  res.status(200).json('Basketball api updates')
+});
+app.use('/api/v1', hoops);
 
 //Movies CONTROLLER
 let moviesController=require('./Controller/movies.js')
