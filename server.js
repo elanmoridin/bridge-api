@@ -45,13 +45,13 @@ app.use('/bridge', bridgeController)
 let userController=require('./Controller/users_controller.js')
 app.use('/users', userController)
 
-//NBA Controller
-app.use(bodyParser.json());
-let hoops = require('./controller/basketball');
-app.get('/', (req, res) => {
-  res.status(200).json('Basketball api updates')
-});
-app.use('/api/v1', hoops);
+// //NBA Controller
+// app.use(bodyParser.json());
+// let hoops = require('./controller/basketball');
+// app.get('/', (req, res) => {
+//   res.status(200).json('Basketball api updates')
+// });
+// app.use('/api/v1', hoops);
 
 //Movies CONTROLLER
 let moviesController=require('./Controller/movies.js')
