@@ -46,12 +46,9 @@ app.use('/bridge', bridgeController)
 let userController=require('./Controller/users_controller.js')
 app.use('/users', userController)
 
-// //NBA Controller
-// let hoops = require('./Controller/basketball.js');
-// // app.get('/', (req, res) => {
-// //   res.status(200).json('Basketball api updates')
-// // });
-// app.use('/api/v1', hoops);
+//NBA Controller
+let hoops = require('./Controller/basketball.js');
+app.use('/api/v1', hoops);
 
 //Movies CONTROLLER
 let moviesController=require('./Controller/movies.js')
