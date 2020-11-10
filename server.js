@@ -14,9 +14,9 @@ let bodyParser = require('body-parser');
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod Ready and Running Baby?'))
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 // database connection variable
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bridge'
+// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bridge'
 // database connection
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
 mongoose.connection.once('open', ()=>{
     console.log('connected to Big Goose...')
 })
